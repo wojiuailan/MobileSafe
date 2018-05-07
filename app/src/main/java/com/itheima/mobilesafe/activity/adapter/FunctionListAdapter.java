@@ -38,7 +38,7 @@ public class FunctionListAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.iteam_function_list_adapter, null);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_function_list_adapter, null);
             viewHolder.mIVIcon = convertView.findViewById(R.id.iv_icon);
             viewHolder.mTVFunctionListName = convertView.findViewById(R.id.tv_function_list_name);
             convertView.setTag(viewHolder);

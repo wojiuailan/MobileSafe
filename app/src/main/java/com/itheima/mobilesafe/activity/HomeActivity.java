@@ -1,7 +1,10 @@
 package com.itheima.mobilesafe.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.itheima.mobilesafe.R;
@@ -17,6 +20,25 @@ public class HomeActivity extends AppCompatActivity {
 
         initUI();
         initDate();
+        setOnClickListener();
+    }
+
+    /**
+     * 设置监听事件
+     */
+    private void setOnClickListener() {
+        mGVFunction.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        break;
+                    case 8:
+                        startActivity(new Intent(HomeActivity.this, SettingActivity.class));
+                        break;
+                }
+            }
+        });
     }
 
     /**

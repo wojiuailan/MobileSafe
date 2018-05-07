@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.itheima.mobilesafe.R;
 import com.itheima.mobilesafe.config.KeyValues;
+import com.itheima.mobilesafe.utils.SPUtil;
 import com.itheima.mobilesafe.utils.StreamUtil;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -122,6 +123,12 @@ public class SplashActivity extends AppCompatActivity {
      */
     private void checkUpdate() {
         mStartTime = System.currentTimeMillis();
+
+        if (!SPUtil.getBoolean(SplashActivity.this, KeyValues.AUTO_UPDATE, false)) {
+            delayOpenHome();
+            return;
+        }
+
         new Thread(new Runnable() {
             @Override
             public void run() {
